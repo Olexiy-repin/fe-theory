@@ -1,0 +1,180 @@
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-family: sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $primary-font-stack;
+  color: color(primary-dark);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  line-height: $base-line-height;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+  background-color: color(primary-light);
+  background-repeat: repeat;
+}
+
+// Headings
+h1 {
+  font-size: $base-font-size * 3;
+  font-weight: 500;
+}
+
+h2 {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  font-size: $base-font-size * 2.5;
+  line-height: $base-font-size * 3;
+  font-weight: 500;
+}
+
+h2 + h3 {
+  margin-top: 32px;
+}
+
+h3 {
+  margin-top: 64px;
+  margin-bottom: 32px;
+  font-size: $base-font-size * 2;
+  line-height: $base-font-size * 2.5;
+  font-weight: 500;
+}
+
+h3 + h4 {
+  margin-top: 24px;
+}
+
+h4 {
+  margin-top: 48px;
+  margin-bottom: 24px;
+
+  font-size: $base-font-size * 1.75;
+  line-height: $base-font-size * 2;
+  font-weight: 500;
+}
+
+// Heading counters
+.theory-page {
+  counter-reset: h2-counter;
+}
+
+.theory-page section {
+  counter-reset: h3-counter;
+}
+
+.theory-page h2 {
+  counter-increment: h2-counter;
+
+  &::before {
+    display: inline-block;
+    vertical-align: top;
+    content: counter(h2-counter) " - ";
+    margin-right: 8px;
+  }
+}
+
+.theory-page h3 {
+  counter-reset: h4-counter;
+
+  counter-increment: h3-counter;
+
+  &::before {
+    display: inline-block;
+    vertical-align: bottom;
+    content: counter(h2-counter) "." counter(h3-counter) " - ";
+    margin-right: 8px;
+  }
+}
+
+.theory-page h4 {
+  counter-increment: h4-counter;
+
+  &::before {
+    display: inline-block;
+    vertical-align: bottom;
+    content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter)
+      " - ";
+    margin-right: 8px;
+  }
+}
+
+// Rest
+img {
+  display: block;
+  max-width: 100%;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+a {
+  word-break: break-all;
+}
+
+p {
+  font-size: $base-font-size * 1.25;
+  font-weight: 400;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+strong {
+  font-size: $base-font-size * 1.25;
+  font-weight: 700;
+}
+
+code {
+  font-family: "Roboto Mono", monospace;
+  background-color: color(code-highlight);
+  font-size: $base-font-size * 1.25;
+  padding: 1px 4px;
+  font-weight: 700;
+}
+
+ul,
+ol {
+  li {
+    font-size: $base-font-size * 1.125;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+figure {
+  text-align: center;
+  font-size: $base-font-size;
+  margin-top: 24px;
+  margin-bottom: 24px;
+
+  img {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+pre {
+  font-size: $base-font-size * 1.125;
+
+  code {
+    font-weight: 400;
+  }
+}

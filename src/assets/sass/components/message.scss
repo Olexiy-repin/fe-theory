@@ -1,0 +1,42 @@
+%message {
+  overflow: hidden;
+  padding: 0 12px;
+
+  // margin-bottom: px-to-rem(20px);
+  // padding: px-to-rem(10px);
+
+  p {
+    // margin-bottom: 0;
+    // padding-bottom: 0;
+    font-size: $base-font-size * 1.125;
+
+    // font-size: px-to-rem(18px);
+  }
+
+  strong {
+    font-size: $base-font-size * 1.25;
+    font-style: normal;
+    font-weight: 700;
+
+    // font-size: px-to-rem(20px);
+  }
+
+  ul {
+    font-size: $base-font-size;
+
+    // font-size: px-to-rem(16px);
+    // margin-bottom: 0;
+  }
+}
+
+.note {
+  @extend %message;
+  background: color(note-accent);
+  border-left: 4px solid color(note-border);
+}
+
+.warn {
+  @extend %message;
+  background: color(warn-accent);
+  border-left: 4px solid color(warn-border);
+}
