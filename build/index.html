@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,maximum-scale=1,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link rel="icon" href="favicon.png?" type="image/png"><link rel="stylesheet" href="css/styles.min.css?t=1584781053432"><title>FE2017-HTML/CSS</title></head><body class="page"><div class="wrapper"><h1>Материалы курса - HTML/CSS</h1><nav class="menu-container" id="menu-container"></nav></div><script type="template/lodash" id="nav"><section class="nav">
+      <h3 class="nav-title"> <%- title.toUpperCase() %> </h3>
+      <ul class="nav-list"> <% _.times(11, (idx) => { %> <li>
+            <a href="<%-group%>/module-<%- idx + 1 %>.html">
+              Модуль <%- idx + 1 %> </a>
+          </li> <% }); %> </ul>
+    </section></script><script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script><script>const menuData = [{
+      title: 'теория',
+      group: 'theory'
+    },
+    {
+      title: 'задания',
+      group: 'tasks'
+    },
+    {
+      title: 'тесты',
+      group: 'tests'
+    },
+    {
+      title: 'дз',
+      group: 'homework'
+    }
+    ];
+
+    const container = document.getElementById('menu-container');
+    const html = document.getElementById('nav').textContent.trim();
+    const compiled = _.template(html);
+    let htmlString = '';
+
+    menuData.forEach(x => {
+      htmlString += compiled(x);
+    });
+
+    container.innerHTML = htmlString;</script></body></html>

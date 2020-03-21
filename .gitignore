@@ -37,6 +37,6 @@ Ankh.NoLoad
 node_modules/
 
 #Build folder
-build/
+# build/
 
 package-lock.json
